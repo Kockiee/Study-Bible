@@ -6,7 +6,7 @@ import json
 
 #Tokens
 #------------------------------#
-headers_ABD = {"Authorization": "your-token"}
+headers_ABD = # Your-token, you can use this in your javascript files on fetch requests
 #------------------------------#
 
 def index(request):
