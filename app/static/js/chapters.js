@@ -3,7 +3,7 @@ window.onload = function () {
     const title_div_primary = document.getElementById("title-book");
 
     fetch('https://www.abibliadigital.com.br/api/books/' + book_id, {
-      headers: {"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlR1ZSBKYW4gMjQgMjAyMyAyMToyNToxMyBHTVQrMDAwMC5tZ3VlbGkxMjA4QGdtYWlsLmNvbSIsImlhdCI6MTY3NDU5NTUxM30.ATotDCPYjmzf8nREHCplGpS07sHMgH17yc6PeQVRjgg"}
+      headers: {"Authorization": "your-token"}
     })
     .then(response => response.json())
     .then(data => {
