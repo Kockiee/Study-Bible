@@ -55,7 +55,7 @@ txt_search_input.value = search_word
 // Create a list with the possibles words to search
 let name_of_books = [];
 fetch('https://www.abibliadigital.com.br/api/books', {
-  headers: {"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlR1ZSBKYW4gMjQgMjAyMyAyMToyNToxMyBHTVQrMDAwMC5tZ3VlbGkxMjA4QGdtYWlsLmNvbSIsImlhdCI6MTY3NDU5NTUxM30.ATotDCPYjmzf8nREHCplGpS07sHMgH17yc6PeQVRjgg"}
+  headers: {"Authorization": "your-token"}
 })
 .then(response => response.json())
 .then(data => {
@@ -98,7 +98,7 @@ function searchWordInBible() {
     else {
         // Get a list of books with a api of the bible request
         fetch('https://www.abibliadigital.com.br/api/books', {
-          headers: {"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlR1ZSBKYW4gMjQgMjAyMyAyMToyNToxMyBHTVQrMDAwMC5tZ3VlbGkxMjA4QGdtYWlsLmNvbSIsImlhdCI6MTY3NDU5NTUxM30.ATotDCPYjmzf8nREHCplGpS07sHMgH17yc6PeQVRjgg"}
+          headers: {"Authorization": "your-token"}
         })
         .then(response => response.json())
         .then(data => {
@@ -132,7 +132,7 @@ function searchWordInBible() {
                 // Post data (words that was written in txt_search_input) on api of the bible
                 fetch("https://www.abibliadigital.com.br/api/verses/search", {
                     method: "POST",
-                    headers: {"Accept": "application/json", "Content-Type": "application/json", "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlR1ZSBKYW4gMjQgMjAyMyAyMToyNToxMyBHTVQrMDAwMC5tZ3VlbGkxMjA4QGdtYWlsLmNvbSIsImlhdCI6MTY3NDU5NTUxM30.ATotDCPYjmzf8nREHCplGpS07sHMgH17yc6PeQVRjgg"},
+                    headers: {"Accept": "application/json", "Content-Type": "application/json", "Authorization": "your-token"},
                     body: JSON.stringify({
                         "version": "acf",
                         "search": txt_search_input_value.toLowerCase()
@@ -147,9 +147,9 @@ function searchWordInBible() {
                     content_container.innerHTML = ""
 
                     // Verify the results
-                    var versepdiv = document.createElement("div");
-                    content_container.appendChild(versepdiv);
                     if (data.verses.length == 0) {
+                        var versepdiv = document.createElement("div");
+                        content_container.appendChild(versepdiv);
                         versepdiv.innerHTML = '<h2 class="text-white">Nada Encontrado.</h2>'
                     } else {
                         // Verify the device type and set their styles
@@ -162,6 +162,8 @@ function searchWordInBible() {
                         // Getting verses with the limit
                         const verses = limitedData
                         verses.forEach(function(i) {
+                            var versepdiv = document.createElement("div");
+                            content_container.appendChild(versepdiv);
                             versepdiv.innerHTML = '<p class="text-white fs-5"><span class="text-secondary fs-4">' + i.number + '</span> ' + i.text + '</p>';
                         })
                     }
