@@ -140,6 +140,9 @@ function searchWordInBible() {
                 })
                 .then(response => response.json())
                 .then(data => {
+                    // Set data return limit
+                    const limitedData = data.verses.slice(0, 10);
+
                     // Clean the html content of content_container
                     content_container.innerHTML = ""
 
@@ -149,9 +152,6 @@ function searchWordInBible() {
                     if (data.verses.length == 0) {
                         versepdiv.innerHTML = '<h2 class="text-white">Nada Encontrado.</h2>'
                     } else {
-                        // Set data return limit
-                        const limitedData = data.verses.slice(0, 10);
-
                         // Verify the device type and set their styles
                         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
                           content_container.className = "rounded-2 bg-dark-light w-100 fs-2 p-3 mb-5";
