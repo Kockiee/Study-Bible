@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://v5j9q4b5.rocketcdn.me/wp-content/uploads/2021/03/biblia-origem-significado-e-importancia-do-simbolo-religioso-3-960x579.jpg"
+    <img style="border-radius:100%" src="https://v5j9q4b5.rocketcdn.me/wp-content/uploads/2021/03/biblia-origem-significado-e-importancia-do-simbolo-religioso-3-960x579.jpg"
     width="500" height="300">
 </div>
 
@@ -11,7 +11,7 @@
 <ul>
     <em><li><a href="http://www.abibliadigital.com.br/">API</a></li></em>
     <li><strong>Front-End:</strong> Bootstrap mixado com css comum</li>
-    <li><strong>Back-End:</strong>Django</li>
+    <li><strong>Back-End:</strong> Django</li>
 </ul>
 
 # 🚀 Instalação!
